@@ -6,7 +6,7 @@ import EpisodesList from "../components/episodes-list"
 import PrevNext from "../components/prev-next"
 import Button from "../components/button"
 
-export const query = graphql`
+const query = graphql`
   query($author: String!, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: {

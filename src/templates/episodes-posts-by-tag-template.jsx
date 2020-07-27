@@ -6,7 +6,7 @@ import EpisodesList from "../components/episodes-list"
 import PrevNext from "../components/prev-next"
 import Button from "../components/button"
 
-export const query = graphql`
+const query = graphql`
   query($tag: String!, $skip: Int!, $limit: Int!) {
     tagDetails: markdownRemark(
       frontmatter: { type: { eq: "data" }, name: { eq: "tags" } }

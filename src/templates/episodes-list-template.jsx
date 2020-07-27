@@ -7,12 +7,10 @@ import PrevNext from "../components/prev-next"
 
 import styles from "./episodes-list-template.module.scss"
 
-export const query = graphql`
-  query($skip: Int!, $limit: Int!) {
+const query = graphql`
+  {
     allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "post" } }, published: { eq: true } }
-      limit: $limit
-      skip: $skip
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {

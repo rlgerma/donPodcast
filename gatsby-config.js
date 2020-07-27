@@ -14,7 +14,7 @@ module.exports = {
       "just another podcast featuring two white millenials giving luke warm takes",
     image: "/images/logo.jpg",
     bannerImage: "/images/banner.png",
-    episodesPerPage: 1,
+    episodesPerPage: 3,
     social: {
       instagram: "",
       twitter: "",

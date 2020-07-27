@@ -9,12 +9,9 @@ import SocialShare from "../components/social-share"
 
 import styles from "./episodes-post-template.module.scss"
 
-export const queryPostBySlug = graphql`
-  query($slug: String!) {
-    post: markdownRemark(
-      frontmatter: { type: { eq: "post" } }
-      fields: { slug: { eq: $slug } }
-    ) {
+const queryPostBySlug = graphql`
+  {
+    post: markdownRemark(frontmatter: { type: { eq: "post" } }) {
       frontmatter {
         title
         author
