@@ -10,7 +10,7 @@ module.exports = {
     bannerImage: "/images/banner.png",
     episodesPerPage: 3,
     social: {
-      instagram: "",
+      instagram: "https://soundcloud.com/user-293752257",
       twitter: "",
     },
     mailchimpUrl: "",

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { FaInstagram, FaTwitter } from "react-icons/fa"
+import { FaInstagram, FaTwitter, FaSoundcloud } from "react-icons/fa"
 
 import styles from "./footer.module.scss"
 
@@ -29,9 +29,7 @@ const Footer = () => {
           <Link to="/" className={styles.navItem}>
             home
           </Link>
-          <Link to="/episodes" className={styles.navItem}>
-            episodes
-          </Link>
+
           <Link to="/about" className={styles.navItem}>
             about
           </Link>
@@ -60,7 +58,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="icon" alt="instagram icon link" />
+            <FaSoundcloud className="icon" alt="soundcloud icon link" />
           </a>
           <a
             href={`https://www.twitter.com/${data.site.siteMetadata.social.twitter}`}

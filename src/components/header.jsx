@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { FaInstagram, FaTwitter } from "react-icons/fa"
+import { FaInstagram, FaTwitter, FaSoundcloud } from "react-icons/fa"
 
 import styles from "./header.module.scss"
 
@@ -50,7 +50,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="ml3 ml4-l"
             >
-              <FaInstagram className="icon" alt="instagram icon link" />
+              <FaSoundcloud className="icon" alt="soundloud icon link" />
             </a>
             <a
               href={`https://www.twitter.com/${data.siteMetadata.siteMetadata.social.twitter}`}
