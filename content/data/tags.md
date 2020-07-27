@@ -18,7 +18,7 @@ tag_details:
     featured: true
     featured_image: "../images/news.jpg"
     featured_image_alt: double or nothing news
-  - name: opinion
+  - name: opinions
     description: ""
     featured: true
     featured_image: "../images/opinion.jpg"

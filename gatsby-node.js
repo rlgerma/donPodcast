@@ -119,7 +119,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
       siteMetaData: site {
         siteMetadata {
-          episodesPostsPerPage
+          episodesPerPage
         }
       }
     }
@@ -131,8 +131,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const tags = res.data.tagsGroup.group
   const authors = res.data.authorsGroup.group
 
-  // Create episodes post detail pages
-  // Example: /episodes/my-first-post
+  Create episodes post detail pages
+  Example: /episodes/my-first-post
   posts.forEach(({ node, next, previous }) => {
     createPage({
       component: episodesPostTemplate,
@@ -145,8 +145,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create paginated episodes listing pages
-  // Example: /episodes, /episodes/2, episodes/3, etc
+  Create paginated episodes listing pages
+  Example: /episodes, /episodes/2, episodes/3, etc
   Array.from({ length: numEpisodesListPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/episodes` : `/episodes/${i + 1}`,
@@ -160,8 +160,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create paginated episodes tag listing pages for each tag
-  // Example: /episodes/tag/first-tag, /episodes/tag/first-tag/2, /episodes/tag/second-tag, etc
+  Create paginated episodes tag listing pages for each tag
+  Example: /episodes/tag/first-tag, /episodes/tag/first-tag/2, /episodes/tag/second-tag, etc
   tags.forEach(tag => {
     const tagName = tag.fieldValue
     const tagCount = tag.totalCount
@@ -185,8 +185,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create paginated episodes author listing pages for each author
-  // Example: /episodes/author/savannah, /episodes/author/savannah/2, /episodes/author/maya, etc
+  Create paginated episodes author listing pages for each author
+  Example: /episodes/author/savannah, /episodes/author/savannah/2, /episodes/author/maya, etc
   authors.forEach(author => {
     const authorName = author.fieldValue
     const authorCount = author.totalCount

@@ -17,8 +17,11 @@ $color-tertiary-light: #102110;
   src: url("/fonts/unbutton.ttf") format("truetype");
 }
 
+
 body {
-  @extend .bg-white, .dark-gray, .f4;
+  @extend .bg-white,
+  .dark-gray,
+  .f4;
 
   font-family: lato, sans-serif;
 }
@@ -32,7 +35,8 @@ li {
 }
 
 a {
-  @extend .dark-gray, .dim;
+  @extend .dark-gray,
+  .dim;
 
   &:hover {
     @extend .text-color-secondary;
@@ -42,18 +46,32 @@ a {
 blockquote {
   @extend .text-color-secondary;
 
-  @extend .ma0, .pt2, .ph3, .pb2, .relative;
-  @extend .pt3-m, .ph4-m, .pb3-m;
-  @extend .pt4-l, .ph5-l, .pb4-l;
-  @extend .mh3-ns, .mv2-ns;
+  @extend .ma0,
+  .pt2,
+  .ph3,
+  .pb2,
+  .relative;
+  @extend .pt3-m,
+  .ph4-m,
+  .pb3-m;
+  @extend .pt4-l,
+  .ph5-l,
+  .pb4-l;
+  @extend .mh3-ns,
+  .mv2-ns;
 }
 
 blockquote p {
-  @extend .f2, .fw5, .tc;
+  @extend .f2,
+  .fw5,
+  .tc;
 }
 
 blockquote cite {
-  @extend .f5, .fs-normal, .tracked, .ttu;
+  @extend .f5,
+  .fs-normal,
+  .tracked,
+  .ttu;
 }
 
 blockquote:before {
@@ -96,15 +114,26 @@ blockquote:before {
 // custom headings
 
 h1.page-heading {
-  @extend .f1, .fw1, .mb4, .mt6, .tc;
+  @extend .f1,
+  .fw1,
+  .mb4,
+  .mt6,
+  .tc;
 
   font-family: "aliens", sans-serif;
 }
 
 h2.section-heading {
-  @extend .db, .f2, .fw1, .lh-copy, .mb3, .tc;
+  @extend .db,
+  .f2,
+  .fw1,
+  .lh-copy,
+  .mb3,
+  .tc;
 
   font-family: lato, sans-serif;
+  font-weight: 900;
+  font-style: normal;
 }
 
 h3.section-sub-heading {
@@ -116,11 +145,16 @@ h3.section-sub-heading {
 // links and buttons
 
 .nav-link {
-  @extend .f5, .no-underline;
+  @extend .f5,
+  .no-underline;
 }
 
 .button-base {
-  @extend .br2, .ba, .f5, .pa3, .white;
+  @extend .br2,
+  .ba,
+  .f5,
+  .pa3,
+  .white;
   background-color: $color-tertiary;
 
   &:hover {
@@ -130,7 +164,9 @@ h3.section-sub-heading {
 }
 
 .icon-base {
-  @extend .dark-gray, .dim, .v-mid;
+  @extend .dark-gray,
+  .dim,
+  .v-mid;
 
   &:hover {
     @extend .text-color-secondary;

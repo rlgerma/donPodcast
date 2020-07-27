@@ -29,9 +29,9 @@ const Footer = () => {
           <Link to="/" className={styles.navItem}>
             home
           </Link>
-          <Link to="/episodes" className={styles.navItem}>
+          {/* <Link to="/episodes" className={styles.navItem}>
             episodes
-          </Link>
+          </Link> */}
           <Link to="/about" className={styles.navItem}>
             about
           </Link>

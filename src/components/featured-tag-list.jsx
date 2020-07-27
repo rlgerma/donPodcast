@@ -7,7 +7,7 @@ import styles from "./featured-tag-list.module.scss"
 const FeaturedTagList = ({ tags }) => {
   return (
     <>
-      <h2 className="section-heading">Posts by Tag</h2>
+      <h2 className="section-heading">Blog</h2>
       <div className={styles.featuredTagItemsContainer}>
         {tags.map(({ name, featured_image, featured_image_alt }) => (
           <FeaturedTagItem
