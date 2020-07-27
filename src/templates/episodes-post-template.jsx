@@ -9,45 +9,44 @@ import SocialShare from "../components/social-share"
 
 import styles from "./episodes-post-template.module.scss"
 
-const queryPostBySlug = graphql`
-  {
-    post: markdownRemark(frontmatter: { type: { eq: "post" } }) {
-      frontmatter {
-        title
-        author
-        date
-        dateFormattedPretty: date(formatString: "MMMM Do, YYYY")
-        draft
-        tags
-        excerpt
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1000, quality: 75) {
-              ...GatsbyImageSharpFluid_withWebp
+const EpisodesPosts = ({ pageContext }) => {
+  const data = graphql`
+    {
+      post: markdownRemark(frontmatter: { type: { eq: "post" } }) {
+        frontmatter {
+          title
+          author
+          date
+          dateFormattedPretty: date(formatString: "MMMM Do, YYYY")
+          draft
+          tags
+          excerpt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 75) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
+            publicURL
           }
-          publicURL
+          imageAlt
         }
-        imageAlt
-      }
-      html
-      id
-      fields {
-        slug
-      }
-    }
-    site: site {
-      siteMetadata {
-        siteUrl
-        social {
-          twitter
+        html
+        id
+        fields {
+          slug
         }
       }
+      site: site {
+        siteMetadata {
+          siteUrl
+          social {
+            twitter
+          }
+        }
+      }
     }
-  }
-`
-
-const EpisodesPosts = ({ data, pageContext }) => {
+  `
   const { post } = data
   const { next, prev } = pageContext
 
