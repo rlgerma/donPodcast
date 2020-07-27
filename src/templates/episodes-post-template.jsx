@@ -47,7 +47,7 @@ const EpisodesPosts = ({ pageContext }) => {
       }
     }
   `
-  const { post } = data
+  const { post } = data.post
   const { next, prev } = pageContext
 
   const nextDetails = !next
@@ -67,71 +67,71 @@ const EpisodesPosts = ({ pageContext }) => {
       }
 
   return (
-    <Layout
-      isArticle={true}
-      title={post.frontmatter.title}
-      description={post.frontmatter.excerpt}
-      image={post.frontmatter.image.publicURL}
-      author={post.frontmatter.author}
-      pathName={`/episodes/${post.fields.slug}`}
-      datePublished={post.frontmatter.date}
-    >
-      <article className="ph4">
-        <header className={styles.header}>
-          <h1 className={styles.title}>{post.frontmatter.title}</h1>
-          {post.frontmatter.draft && (
-            <div className={styles.draft}>
-              <span>
-                ! This post is a draft and will not be published in production !
-              </span>
-            </div>
-          )}
-          <div>
-            <span className={styles.subtitle}>
-              by{" "}
-              <Link to={`/episodes/authors/${post.frontmatter.author}`}>
-                {post.frontmatter.author}
-              </Link>{" "}
-              on {post.frontmatter.dateFormattedPretty}
-            </span>
-          </div>
-          <SocialShare
-            text="SHARE THIS POST"
-            shareTitle={post.frontmatter.title}
-            shareUrl={`${data.site.siteMetadata.siteUrl}/episodes/${post.fields.slug}`}
-          />
-          <div className={styles.tagListContainer}>
-            {post.frontmatter.tags.map(tag => (
-              <Button
-                key={tag}
-                linkUrl={`/episodes/tags/${tag}`}
-                linkText={tag}
-              />
-            ))}
-          </div>
-        </header>
-        <Img
-          fluid={post.frontmatter.image.childImageSharp.fluid}
-          alt={post.frontmatter.imageAlt}
-        />
+    // <Layout
+    //   isArticle={true}
+    //   title={post.frontmatter.title}
+    //   description={post.frontmatter.excerpt}
+    //   image={post.frontmatter.image.publicURL}
+    //   author={post.frontmatter.author}
+    //   pathName={`/episodes/${post.fields.slug}`}
+    //   datePublished={post.frontmatter.date}
+    // >
+    //   <article className="ph4">
+    //     <header className={styles.header}>
+    //       <h1 className={styles.title}>{post.frontmatter.title}</h1>
+    //       {post.frontmatter.draft && (
+    //         <div className={styles.draft}>
+    //           <span>
+    //             ! This post is a draft and will not be published in production !
+    //           </span>
+    //         </div>
+    //       )}
+    //       <div>
+    //         <span className={styles.subtitle}>
+    //           by{" "}
+    //           <Link to={`/episodes/authors/${post.frontmatter.author}`}>
+    //             {post.frontmatter.author}
+    //           </Link>{" "}
+    //           on {post.frontmatter.dateFormattedPretty}
+    //         </span>
+    //       </div>
+    //       <SocialShare
+    //         text="SHARE THIS POST"
+    //         shareTitle={post.frontmatter.title}
+    //         shareUrl={`${data.site.siteMetadata.siteUrl}/episodes/${post.fields.slug}`}
+    //       />
+    //       <div className={styles.tagListContainer}>
+    //         {post.frontmatter.tags.map(tag => (
+    //           <Button
+    //             key={tag}
+    //             linkUrl={`/episodes/tags/${tag}`}
+    //             linkText={tag}
+    //           />
+    //         ))}
+    //       </div>
+    //     </header>
+    //     <Img
+    //       fluid={post.frontmatter.image.childImageSharp.fluid}
+    //       alt={post.frontmatter.imageAlt}
+    //     />
 
-        <div
-          className={styles.postContent}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        ></div>
+    //     <div
+    //       className={styles.postContent}
+    //       dangerouslySetInnerHTML={{ __html: post.html }}
+    //     ></div>
 
-        <div className={styles.postEnd}>
-          <h3 className="section-sub-heading">Thanks for reading!</h3>
-          <SocialShare
-            text="SHARE THIS POST"
-            shareTitle={post.frontmatter.title}
-            shareUrl={`${data.site.siteMetadata.siteUrl}/episodes/${post.fields.slug}`}
-          />
-        </div>
+    //     <div className={styles.postEnd}>
+    <h3 className="section-sub-heading">Thanks for reading!</h3>
+    //       <SocialShare
+    //         text="SHARE THIS POST"
+    //         shareTitle={post.frontmatter.title}
+    //         shareUrl={`${data.site.siteMetadata.siteUrl}/episodes/${post.fields.slug}`}
+    //       />
+    //     </div>
 
-        <PrevNext prevDetails={prevDetails} nextDetails={nextDetails} />
-      </article>
-    </Layout>
+    //     <PrevNext prevDetails={prevDetails} nextDetails={nextDetails} />
+    //   </article>
+    // </Layout>
   )
 }
 
