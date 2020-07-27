@@ -47,24 +47,24 @@ const EpisodesPosts = ({ pageContext }) => {
       }
     }
   `
-  const { post } = data.post
-  const { next, prev } = pageContext
+  // const { post } = data.post
+  // const { next, prev } = pageContext
 
-  const nextDetails = !next
-    ? null
-    : {
-        titleText: "Next Post",
-        linkPath: "/episodes/" + next.fields.slug,
-        linkText: next.frontmatter.title,
-      }
+  // const nextDetails = !next
+  //   ? null
+  //   : {
+  //       titleText: "Next Post",
+  //       linkPath: "/episodes/" + next.fields.slug,
+  //       linkText: next.frontmatter.title,
+  //     }
 
-  const prevDetails = !prev
-    ? null
-    : {
-        titleText: "Previous Post",
-        linkPath: "/episodes/" + prev.fields.slug,
-        linkText: prev.frontmatter.title,
-      }
+  // const prevDetails = !prev
+  //   ? null
+  //   : {
+  //       titleText: "Previous Post",
+  //       linkPath: "/episodes/" + prev.fields.slug,
+  //       linkText: prev.frontmatter.title,
+  //     }
 
   return (
     // <Layout
