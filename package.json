@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-voyager",
+  "name": "don",
   "private": true,
-  "description": "A feature-rich Gatsby starter blog.",
+  "description": "A podcasting site",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

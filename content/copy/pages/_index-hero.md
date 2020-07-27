@@ -1,10 +1,10 @@
 ---
 type: page-content
 name: index-hero
-title: Voyager
-subtitle: a Gatsby starter that'll take you places
-leftImage: "../../images/luca-bravo-O453M2Liufs-unsplash.jpg"
-leftImageAlt: alt text here
-rightImage: "../../images/nadi-whatisdelirium-3VTZloIMFP0-unsplash.jpg"
-rightImageAlt: alt text here
+title: Double or Nothing
+subtitle: a podcast with slightly good intentions
+leftImage: "../../images/left.jpg"
+leftImageAlt: the giving tree
+rightImage: "../../images/right.jpg"
+rightImageAlt: some bullshit mixtapes
 ---

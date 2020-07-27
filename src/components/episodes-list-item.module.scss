@@ -1,5 +1,10 @@
 @import "../styles/main.scss";
 
+@font-face {
+  font-family: "arcade";
+  src: url("../styles/fonts/arcadeI.ttf") format("truetype");
+}
+
 .post {
   @extend .bg-very-light-gray;
   @extend .br3, .dark-gray, .flex, .flex-column, .items-center, .mv3, .pa4;
@@ -20,7 +25,7 @@
 .title {
   @extend .f2, .fw1, .lh-copy, .ma0;
 
-  font-family: "Mansalva", cursive;
+  font-family: "arcade", sans-serif;
 }
 
 .subtitle {

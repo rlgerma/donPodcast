@@ -8,34 +8,24 @@ name: tags
 #   featured_image (the image to show on the home page)
 #   featured_image_alt (alt text)
 tag_details:
-- name: travel
-  description: ""
-  featured: false
-  # featured_image: ''
-  featured_image_alt: ''
-- name: europe
-  description: ''
-  featured: true
-  featured_image: "../images/florian-wehde-WBGjg0DsO_g-unsplash.jpg"
-  featured_image_alt: alt text here
-- name: americas
-  description: ''
-  featured: true
-  featured_image: "../images/yajnas-ug-sFqNqRVw-unsplash.jpg"
-  featured_image_alt: alt text here
-- name: spain
-  description: ''
-  featured: false
-  # featured_image: ''
-  featured_image_alt: ''
-- name: puerto-rico
-  description: "Sed maximus vitae sapien eget posuere. Sed convallis orci sit amet sapien ornare congue. Vivamus gravida, purus quis tincidunt ornare, augue odio pretium enim, at semper massa nisi ut massa. Fusce porttitor consequat nisi, vitae feugiat nisi tempus non. Nunc laoreet felis porta turpis iaculis vulputate."
-  featured: false
-  # featured_image: ''
-  featured_image_alt: ''
-- name: architecture
-  description: "Integer lobortis nulla lorem, sed facilisis tellus hendrerit efficitur. Suspendisse dictum libero sed ligula malesuada tempus. Donec urna velit, pulvinar ac porttitor non, ultrices id nisi."
-  featured: true
-  featured_image: '../images/dmitry-goykolov-X8Vo9rGVPS8-unsplash.jpg'
-  featured_image_alt: 'alt text here'
+  - name: podcast
+    description: ""
+    featured: false
+    # featured_image: ''
+    featured_image_alt: ""
+  - name: news
+    description: ""
+    featured: true
+    featured_image: "../images/news.jpg"
+    featured_image_alt: double or nothing news
+  - name: opinion
+    description: ""
+    featured: true
+    featured_image: "../images/opinion.jpg"
+    featured_image_alt: double or nothing opinons
+  - name: funny
+    description: ""
+    featured: true
+    featured_image: "../images/funny.jpg"
+    featured_image_alt: "double or nothing funny"
 ---

@@ -1,34 +1,26 @@
 // ********** Tachyons -this includes normalize.css
 
 @import "../../node_modules/tachyons-sass/tachyons.scss";
+@import url("https://use.typekit.net/xep4gzz.css");
 
 // ********** Colors
 
-$color-primary: #e6eaf3;
-$color-secondary: #9c7c38;
-$color-tertiary: #38589c;
-$color-tertiary-light: #cdd5e6;
+$color-primary: #f3ed04;
+$color-secondary: #f7a9e3;
+$color-tertiary: #667ce2;
+$color-tertiary-light: #102110;
 
-// ********** Fonts
+// font imports
 
-// Base Font
-// font-family: "Open Sans", sans-serif;
-
-// Font for site title used on header, footer and hero on index page
-// font-family: 'Rock Salt', cursive;
-
-// Font for custom headers
-// font-family: 'Mansalva', cursive;
-
-// Font for <blockquote> quotation mark
-// font-family: 'Lily Script One', cursive;
-
-// ********** Customise Standard Elements
+@font-face {
+  font-family: "aliens";
+  src: url("/fonts/unbutton.ttf") format("truetype");
+}
 
 body {
   @extend .bg-white, .dark-gray, .f4;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: lato, sans-serif;
 }
 
 p {
@@ -67,7 +59,9 @@ blockquote cite {
 blockquote:before {
   content: '"';
   color: rgba(0, 0, 0, 0.1);
-  font-family: "Lily Script One", cursive;
+  font-family: alien, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 260px;
   left: 0;
   position: absolute;
@@ -104,17 +98,19 @@ blockquote:before {
 h1.page-heading {
   @extend .f1, .fw1, .mb4, .mt6, .tc;
 
-  font-family: "Mansalva", cursive;
+  font-family: "aliens", sans-serif;
 }
 
 h2.section-heading {
   @extend .db, .f2, .fw1, .lh-copy, .mb3, .tc;
 
-  font-family: "Mansalva", cursive;
+  font-family: lato, sans-serif;
 }
 
 h3.section-sub-heading {
-  font-family: "Mansalva", cursive;
+  font-family: lato, sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }
 
 // links and buttons

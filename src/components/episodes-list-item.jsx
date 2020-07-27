@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import styles from "./blog-list-item.module.scss"
+import styles from "./episodes-list-item.module.scss"
 
-const BlogListItem = ({ node }) => {
+const EpisodesListItem = ({ node }) => {
   return (
     <div key={node.id}>
-      <Link to={`/blog/${node.fields.slug}`} className="no-underline">
+      <Link to={`/episodes/${node.fields.slug}`} className="no-underline">
         <div className={styles.post}>
           <div className={styles.postColumn}>
             <h2 className={styles.title}>{node.frontmatter.title}</h2>
@@ -33,4 +33,4 @@ const BlogListItem = ({ node }) => {
   )
 }
 
-export default BlogListItem
+export default EpisodesListItem

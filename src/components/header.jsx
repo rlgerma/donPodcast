@@ -24,7 +24,7 @@ const Header = () => {
         <nav className={styles.navMain}>
           <span>
             <Link to="/" className={styles.navHomeLink}>
-              Voyager
+              Double or Nothing
             </Link>
           </span>
 
@@ -34,22 +34,22 @@ const Header = () => {
               className={styles.navItem}
               activeClassName={styles.navItemActive}
             >
-              Home
+              home
             </Link>
             <Link
-              to="/blog"
+              to="/episodes"
               className={styles.navItem}
               activeClassName={styles.navItemActive}
               partiallyActive={true}
             >
-              Blog
+              episodes
             </Link>
             <Link
               to="/about"
               className={styles.navItem}
               activeClassName={styles.navItemActive}
             >
-              About
+              about
             </Link>
             <a
               href={`https://www.instagram.com/${data.siteMetadata.siteMetadata.social.instagram}`}
@@ -57,7 +57,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="ml3 ml4-l"
             >
-              <FaInstagram className="icon" alt="instagram icon link"/>
+              <FaInstagram className="icon" alt="instagram icon link" />
             </a>
             <a
               href={`https://www.twitter.com/${data.siteMetadata.siteMetadata.social.twitter}`}
@@ -65,7 +65,7 @@ const Header = () => {
               rel="noopener noreferrer"
               className="ml3 ml4-l"
             >
-              <FaTwitter className="icon" alt="twitter icon link"/>
+              <FaTwitter className="icon" alt="twitter icon link" />
             </a>
           </div>
         </nav>

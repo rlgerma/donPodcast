@@ -6,15 +6,15 @@
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://gatsby-starter-voyager.netlify.com",
-    author: "gregdferrell",
-    publisher: "gatsby-starter-voyager.netlify.com",
-    title: "Voyager",
+    siteUrl: "https://test.site.net",
+    author: "richard germaine",
+    publisher: "self",
+    title: "Double or Nothing",
     description:
-      "Gatsby Starter Voyager is feature-rich starter blog. It's MIT licensed and ready to be used as-is or as a starting point from which to build something tailored to your needs. Use it, learn from it, build on it & enjoy.",
+      "just another podcast featuring two white millenials giving luke warm takes",
     image: "/images/logo.jpg",
     bannerImage: "/images/banner.png",
-    blogPostsPerPage: 5,
+    episodesPerPage: 1,
     social: {
       instagram: "",
       twitter: "",
@@ -26,7 +26,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/copy/blog-posts/`,
+        path: `${__dirname}/content/copy/episodes/`,
       },
     },
     {
@@ -107,11 +107,11 @@ module.exports = {
                   description: edge.node.frontmatter.excerpt,
                   guid:
                     site.siteMetadata.siteUrl +
-                    "/blog/" +
+                    "/episodes/" +
                     edge.node.fields.slug,
                   url:
                     site.siteMetadata.siteUrl +
-                    "/blog/" +
+                    "/episodes/" +
                     edge.node.fields.slug,
                 })
               })
@@ -170,11 +170,11 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         // req props
-        name: "Gatsby Starter Voyager",
-        short_name: "Voyager",
+        name: "Double or Nothing Podcast",
+        short_name: "DON",
         start_url: "/",
         background_color: "#fff",
-        theme_color: "#9c7c38",
+        theme_color: "#F3ED02",
         display: "minimal-ui",
         // optional
         icon: "static/images/logo.jpg",
@@ -184,7 +184,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-offline",
       options: {
-        precachePages: ["", "/blog", "/about"],
+        precachePages: ["", "/episodes", "/about"],
       },
     },
   ],

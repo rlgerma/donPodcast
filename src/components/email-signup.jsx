@@ -16,7 +16,7 @@ const EmailSignup = () => {
 
   return (
     <div className={styles.signupSection}>
-      <h2 className="section-heading">Subscribe to this blog!</h2>
+      <h2 className="section-heading">subscribe to our newsletter</h2>
       <form
         className={styles.form}
         action={data.site.siteMetadata.mailchimpUrl}

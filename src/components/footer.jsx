@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa"
+import { FaInstagram, FaTwitter } from "react-icons/fa"
 
 import styles from "./footer.module.scss"
 
@@ -23,29 +23,17 @@ const Footer = () => {
     <div className={styles.footerWrapper}>
       <footer className={styles.footer}>
         <div className={styles.footerColumnName}>
-          <span className={styles.name}>Voyager</span>
-          <p className="f5">
-            Gatsby Starter Voyager is MIT Licensed.
-          </p>
-          <div>
-            <a
-              href="https://github.com/gregdferrell/gatsby-starter-voyager"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="icon" alt="github icon link" />
-            </a>
-          </div>
+          <span className={styles.name}>Double or Nothing</span>
         </div>
         <div className={styles.footerColumnLinks}>
           <Link to="/" className={styles.navItem}>
-            Home
+            home
           </Link>
-          <Link to="/blog" className={styles.navItem}>
-            Blog
+          <Link to="/episodes" className={styles.navItem}>
+            episodes
           </Link>
           <Link to="/about" className={styles.navItem}>
-            About
+            about
           </Link>
           <hr />
           <div>
@@ -54,15 +42,15 @@ const Footer = () => {
               target="__blank"
               className="nav-link mh3"
             >
-              Subscribe
+              subscribe
             </a>
             |
             <a href="/rss.xml" className="nav-link mh3">
-              RSS
+              rss
             </a>
             |
             <a href="/sitemap.xml" className="nav-link mh3">
-              Sitemap
+              sitemap
             </a>
           </div>
         </div>

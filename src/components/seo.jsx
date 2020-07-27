@@ -36,10 +36,10 @@ const SEO = ({
         // https://developers.google.com/search/docs/guides/intro-structured-data
 
         let schemaOrgWebPage,
-          schemaOrgBlogPosting,
+          schemaOrgepisodesPosting,
           schemaOrgBreadcrumbList = null
 
-        // Type WebPage: for all pages that aren't blog posts
+        // Type WebPage: for all pages that aren't episodes posts
         if (!isArticle) {
           schemaOrgWebPage = {
             "@context": "http://schema.org",
@@ -81,11 +81,11 @@ const SEO = ({
           }
         }
 
-        // Type BlogPosting: for all pages that are blog posts
+        // Type episodesPosting: for all pages that are episodes posts
         if (isArticle) {
-          schemaOrgBlogPosting = {
+          schemaOrgepisodesPosting = {
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
+            "@type": "episodesPosting",
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": seo.url,
@@ -112,7 +112,7 @@ const SEO = ({
           }
         }
 
-        // Type Breadcrumbs: for all pages (blog post or not)
+        // Type Breadcrumbs: for all pages (episodes post or not)
         // always include home page in breadcrumbs
         const itemListElement = [
           {
@@ -125,13 +125,13 @@ const SEO = ({
           },
         ]
 
-        // include blog post page if this is a blog post
+        // include episodes post page if this is a episodes post
         if (isArticle) {
           itemListElement.push({
             "@type": "ListItem",
             item: {
-              "@id": `${data.site.siteMetadata.siteUrl}/blog`,
-              name: "Blog",
+              "@id": `${data.site.siteMetadata.siteUrl}/episodes`,
+              name: "episodes",
             },
             position: 2,
           })
@@ -186,7 +186,7 @@ const SEO = ({
             )}
             {isArticle && (
               <script type="application/ld+json">
-                {JSON.stringify(schemaOrgBlogPosting)}
+                {JSON.stringify(schemaOrgepisodesPosting)}
               </script>
             )}
             <script type="application/ld+json">

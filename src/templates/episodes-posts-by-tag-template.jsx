@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import BlogList from "../components/blog-list"
+import EpisodesList from "../components/episodes-list"
 import PrevNext from "../components/prev-next"
 import Button from "../components/button"
 
@@ -62,9 +62,9 @@ const Tags = ({ data, pageContext }) => {
   const isLast = currentPage === numPages
   const prevPage =
     currentPage - 1 === 1
-      ? `/blog/tags/${tag}`
-      : `/blog/tags/${tag}/` + (currentPage - 1).toString()
-  const nextPage = `/blog/tags/${tag}/` + (currentPage + 1).toString()
+      ? `/episodes/tags/${tag}`
+      : `/episodes/tags/${tag}/` + (currentPage - 1).toString()
+  const nextPage = `/episodes/tags/${tag}/` + (currentPage + 1).toString()
 
   const prevDetails = isFirst
     ? null
@@ -88,7 +88,7 @@ const Tags = ({ data, pageContext }) => {
   return (
     <Layout
       title={`Articles tagged ${tag} - Page ${currentPage}`}
-      pathName={`/blog/tags/${tag}`}
+      pathName={`/episodes/tags/${tag}`}
     >
       <header className="tc">
         <h1 className="page-heading">Articles Tagged "{tag}"</h1>
@@ -101,10 +101,10 @@ const Tags = ({ data, pageContext }) => {
       )}
 
       <div className="mv5">
-        <Button linkUrl="/blog/tags" linkText="All Tags" />
+        <Button linkUrl="/episodes/tags" linkText="All Tags" />
       </div>
 
-      <BlogList data={data.posts} />
+      <EpisodesList data={data.posts} />
       <PrevNext prevDetails={prevDetails} nextDetails={nextDetails} />
     </Layout>
   )

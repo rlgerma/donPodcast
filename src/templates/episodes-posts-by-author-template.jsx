@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import BlogList from "../components/blog-list"
+import EpisodesList from "../components/episodes-list"
 import PrevNext from "../components/prev-next"
 import Button from "../components/button"
 
@@ -51,9 +51,9 @@ const Authors = ({ data, pageContext }) => {
   const isLast = currentPage === numPages
   const prevPage =
     currentPage - 1 === 1
-      ? `/blog/authors/${author}`
-      : `/blog/authors/${author}/` + (currentPage - 1).toString()
-  const nextPage = `/blog/authors/${author}/` + (currentPage + 1).toString()
+      ? `/episodes/authors/${author}`
+      : `/episodes/authors/${author}/` + (currentPage - 1).toString()
+  const nextPage = `/episodes/authors/${author}/` + (currentPage + 1).toString()
 
   const prevDetails = isFirst
     ? null
@@ -72,15 +72,15 @@ const Authors = ({ data, pageContext }) => {
   return (
     <Layout
       title={`Articles by ${author} - Page ${currentPage}`}
-      pathName={`/blog/authors/${author}`}
+      pathName={`/episodes/authors/${author}`}
     >
       <header className="tc">
         <h1 className="page-heading">Articles by {author}</h1>
         <div className="mt5">
-          <Button linkUrl="/blog/authors" linkText="All Authors" />
+          <Button linkUrl="/episodes/authors" linkText="All Authors" />
         </div>
       </header>
-      <BlogList data={data.allMarkdownRemark} />
+      <EpisodesList data={data.allMarkdownRemark} />
       <PrevNext prevDetails={prevDetails} nextDetails={nextDetails} />
     </Layout>
   )

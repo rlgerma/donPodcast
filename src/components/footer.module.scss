@@ -1,5 +1,11 @@
 @import "../styles/main.scss";
 
+@font-face {
+  font-family: 'aliens';
+  src:
+    url('../styles/fonts/unbutton.ttf') format('truetype');
+}
+
 .footer-wrapper {
   @extend .bg-primary;
 
@@ -9,12 +15,19 @@
 .footer {
   @extend .standard-page-width;
 
-  @extend .center, .flex, .flex-column, .items-baseline, .ph2, .pv5;
-  @extend .flex-row-l, .justify-between-l;
+  @extend .center,
+  .flex,
+  .flex-column,
+  .items-baseline,
+  .ph2,
+  .pv5;
+  @extend .flex-row-l,
+  .justify-between-l;
 }
 
 .footer-column {
-  @extend .center, .w-100;
+  @extend .center,
+  .w-100;
   @extend .w-third-l;
 }
 
@@ -28,13 +41,15 @@
 .footer-column-links {
   @extend .footer-column;
 
-  @extend .mv3, .tc;
+  @extend .mv3,
+  .tc;
 }
 
 .nav-item {
   @extend .nav-link;
 
-  @extend .db, .mb3;
+  @extend .db,
+  .mb3;
 }
 
 .footer-column-social {
@@ -44,14 +59,17 @@
   @extend .tr-l;
 
   a {
-    @extend .mh2, .ml4-l, .mr0-l;
+    @extend .mh2,
+    .ml4-l,
+    .mr0-l;
   }
 }
 
 .name {
   @extend .text-color-secondary;
 
-  @extend .f3, .fw5;
+  @extend .f3,
+  .fw5;
 
-  font-family: "Rock Salt", cursive;
+  font-family: 'aliens', sans-serif;
 }

@@ -1,5 +1,10 @@
 @import "../styles/main.scss";
 
+@font-face {
+  font-family: "aliens";
+  src: url("../styles/fonts/unbutton.ttf") format("truetype");
+}
+
 .sticky-header {
   position: fixed;
   top: 0;
@@ -15,6 +20,7 @@
   // Header is fixed at 66px on large screens, and 102px on smaller screens
   // If this changes, change the layout margin as well to match
   height: 102px;
+
   @media screen and (min-width: 60em) {
     height: 66px;
   }
@@ -43,7 +49,7 @@
     @extend .text-color-secondary;
   }
 
-  font-family: "Rock Salt", cursive;
+  font-family: "aliens", sans-serif;
 }
 
 .nav-item-list {

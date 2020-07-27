@@ -2,15 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import BlogList from "../components/blog-list"
+import EpisodesList from "../components/episodes-list"
 import PrevNext from "../components/prev-next"
 
-import styles from "./blog-list-template.module.scss"
+import styles from "./episodes-list-template.module.scss"
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "post" } } published: { eq: true } }
+      filter: { frontmatter: { type: { eq: "post" } }, published: { eq: true } }
       limit: $limit
       skip: $skip
       sort: { fields: frontmatter___date, order: DESC }
@@ -42,13 +42,15 @@ export const query = graphql`
   }
 `
 
-const BlogListTemplate = ({ data, pageContext }) => {
+const EpisodesListTemplate = ({ data, pageContext }) => {
   const { currentPage, numPages } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage =
-    currentPage - 1 === 1 ? "/blog" : "/blog/" + (currentPage - 1).toString()
-  const nextPage = "/blog/" + (currentPage + 1).toString()
+    currentPage - 1 === 1
+      ? "/episodes"
+      : "/episodes/" + (currentPage - 1).toString()
+  const nextPage = "/episodes/" + (currentPage + 1).toString()
 
   const prevDetails = isFirst
     ? null
@@ -65,14 +67,14 @@ const BlogListTemplate = ({ data, pageContext }) => {
       }
 
   return (
-    <Layout title={`Blog - Page ${currentPage}`} pathName="/blog">
+    <Layout title={`episodes - Page ${currentPage}`} pathName="/episodes">
       <header className={styles.header}>
-        <h1 className={styles.title}>Blog</h1>
+        <h1 className={styles.title}>episodes</h1>
       </header>
-      <BlogList data={data.allMarkdownRemark} />
+      <EpisodesList data={data.allMarkdownRemark} />
       <PrevNext prevDetails={prevDetails} nextDetails={nextDetails} />
     </Layout>
   )
 }
 
-export default BlogListTemplate
+export default EpisodesListTemplate

@@ -46,17 +46,17 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(
-    "./src/templates/blog-post-template.jsx"
+  const episodesPostTemplate = path.resolve(
+    "./src/templates/episodes-post-template.jsx"
   )
-  const blogListTemplate = path.resolve(
-    "./src/templates/blog-list-template.jsx"
+  const episodesListTemplate = path.resolve(
+    "./src/templates/episodes-list-template.jsx"
   )
-  const blogPostsByTagTemplate = path.resolve(
-    "./src/templates/blog-posts-by-tag-template.jsx"
+  const episodesPostsByTagTemplate = path.resolve(
+    "./src/templates/episodes-posts-by-tag-template.jsx"
   )
-  const blogPostsByAuthorTemplate = path.resolve(
-    "./src/templates/blog-posts-by-author-template.jsx"
+  const episodesPostsByAuthorTemplate = path.resolve(
+    "./src/templates/episodes-posts-by-author-template.jsx"
   )
 
   const res = await graphql(`
@@ -95,7 +95,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
       tagsGroup: allMarkdownRemark(
         filter: {
           frontmatter: { type: { eq: "post" } }
@@ -107,7 +106,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
           totalCount
         }
       }
-
       authorsGroup: allMarkdownRemark(
         filter: {
           frontmatter: { type: { eq: "post" } }
@@ -119,52 +117,51 @@ module.exports.createPages = async ({ graphql, actions }) => {
           totalCount
         }
       }
-
       siteMetaData: site {
         siteMetadata {
-          blogPostsPerPage
+          episodesPostsPerPage
         }
       }
     }
   `)
 
   const posts = res.data.postsRemark.edges
-  const postsPerPage = res.data.siteMetaData.siteMetadata.blogPostsPerPage
-  const numBlogListPages = Math.ceil(posts.length / postsPerPage)
+  const postsPerPage = res.data.siteMetaData.siteMetadata.episodesPostsPerPage
+  const numEpisodesListPages = Math.ceil(posts.length / postsPerPage)
   const tags = res.data.tagsGroup.group
   const authors = res.data.authorsGroup.group
 
-  // Create blog post detail pages
-  // Example: /blog/my-first-post
+  // Create episodes post detail pages
+  // Example: /episodes/my-first-post
   posts.forEach(({ node, next, previous }) => {
     createPage({
-      component: blogPostTemplate,
-      path: `/blog/${node.fields.slug}`,
+      component: episodesPostTemplate,
+      path: `/episodes/${node.fields.slug}`,
       context: {
         slug: node.fields.slug,
-        prev: next, // prev = next is on purpose. in the context of the blog post template, the next post is the one posted later, not before
+        prev: next, // prev = next is on purpose. in the context of the episodes post template, the next post is the one posted later, not before
         next: previous, // see above comment
       },
     })
   })
 
-  // Create paginated blog listing pages
-  // Example: /blog, /blog/2, blog/3, etc
-  Array.from({ length: numBlogListPages }).forEach((_, i) => {
+  // Create paginated episodes listing pages
+  // Example: /episodes, /episodes/2, episodes/3, etc
+  Array.from({ length: numEpisodesListPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogListTemplate,
+      path: i === 0 ? `/episodes` : `/episodes/${i + 1}`,
+      component: episodesListTemplate,
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
-        numPages: numBlogListPages,
+        numPages: numEpisodesListPages,
         currentPage: i + 1,
       },
     })
   })
 
-  // Create paginated blog tag listing pages for each tag
-  // Example: /blog/tag/first-tag, /blog/tag/first-tag/2, /blog/tag/second-tag, etc
+  // Create paginated episodes tag listing pages for each tag
+  // Example: /episodes/tag/first-tag, /episodes/tag/first-tag/2, /episodes/tag/second-tag, etc
   tags.forEach(tag => {
     const tagName = tag.fieldValue
     const tagCount = tag.totalCount
@@ -173,8 +170,10 @@ module.exports.createPages = async ({ graphql, actions }) => {
     Array.from({ length: numTagListPages }).forEach((_, i) => {
       createPage({
         path:
-          i === 0 ? `/blog/tags/${tagName}` : `/blog/tags/${tagName}/${i + 1}`,
-        component: blogPostsByTagTemplate,
+          i === 0
+            ? `/episodes/tags/${tagName}`
+            : `/episodes/tags/${tagName}/${i + 1}`,
+        component: episodesPostsByTagTemplate,
         context: {
           tag: tagName,
           limit: postsPerPage,
@@ -186,8 +185,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create paginated blog author listing pages for each author
-  // Example: /blog/author/savannah, /blog/author/savannah/2, /blog/author/maya, etc
+  // Create paginated episodes author listing pages for each author
+  // Example: /episodes/author/savannah, /episodes/author/savannah/2, /episodes/author/maya, etc
   authors.forEach(author => {
     const authorName = author.fieldValue
     const authorCount = author.totalCount
@@ -197,9 +196,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path:
           i === 0
-            ? `/blog/authors/${authorName}`
-            : `/blog/authors/${authorName}/${i + 1}`,
-        component: blogPostsByAuthorTemplate,
+            ? `/episodes/authors/${authorName}`
+            : `/episodes/authors/${authorName}/${i + 1}`,
+        component: episodesPostsByAuthorTemplate,
         context: {
           author: authorName,
           limit: postsPerPage,

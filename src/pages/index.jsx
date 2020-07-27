@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Button from "../components/button"
-import BlogList from "../components/blog-list"
+import EpisodesList from "../components/episodes-list"
 import FeaturedTagList from "../components/featured-tag-list"
 import EmailSignup from "../components/email-signup"
 import AboutContent from "../components/about-content"
@@ -12,7 +12,6 @@ import AboutContent from "../components/about-content"
 import styles from "./index.module.scss"
 
 const IndexPage = ({ data }) => {
-  // Create sublist of featured tags where feature flag is set and a valid image is present
   let featuredTags = data.tagDetails.frontmatter.tag_details.filter(obj => {
     return obj.featured === true && obj.featured_image
   })
@@ -67,8 +66,8 @@ const IndexPage = ({ data }) => {
 
       {/* Latest Posts */}
       <section className={styles.latestPostsSection}>
-        <h2 className="section-heading">Latest Posts</h2>
-        <BlogList data={data.latestPosts} />
+        <h2 className="section-heading">Latest Episodes</h2>
+        <EpisodesList data={data.latestPosts} />
       </section>
 
       {/* Featured Tags */}
@@ -81,7 +80,7 @@ const IndexPage = ({ data }) => {
         <EmailSignup />
       </section>
 
-      {/* About Me Blurb */}
+      {/* About Blurb */}
       <section className={styles.aboutMeSection}>
         <AboutContent
           heading={data.aboutSectionMarkdown.frontmatter.heading}
@@ -101,10 +100,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query {
     latestPosts: allMarkdownRemark(
-      filter: {
-        frontmatter: { type: { eq: "post" } }
-        published: { eq: true }
-      }
+      filter: { frontmatter: { type: { eq: "post" } }, published: { eq: true } }
       limit: 3
       sort: { fields: frontmatter___date, order: DESC }
     ) {
