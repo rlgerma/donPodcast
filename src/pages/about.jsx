@@ -1,14 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-
+import ContactForm from "../components/contact"
 import Layout from "../components/layout"
 import AboutContent from "../components/about-content"
 
 const AboutPage = ({ data }) => {
   return (
     <Layout title="About" pathName="/about">
-      <h1 className="page-heading">About</h1>
-
       <AboutContent
         heading={data.aboutSectionOne.frontmatter.heading}
         copy={data.aboutSectionOne.html}
@@ -29,6 +27,9 @@ const AboutPage = ({ data }) => {
         image={data.aboutSectionThree.frontmatter.image.childImageSharp.fluid}
         imageAlt={data.aboutSectionThree.frontmatter.imageAlt}
       />
+      <h2 className="section-heading">Contact Us</h2>
+
+      <ContactForm />
     </Layout>
   )
 }

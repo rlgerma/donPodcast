@@ -19,6 +19,7 @@ const EpisodesListItem = ({ node }) => {
           )}
           <p>{node.frontmatter.excerpt}</p>
           <iframe
+            title="soundcloud"
             width="100%"
             height="166"
             scrolling="no"
@@ -45,12 +46,14 @@ const EpisodesListItem = ({ node }) => {
               title="doubleornothing"
               target="_blank"
               style={{ color: "#cccccc", textDecoration: "none" }}
+              rel="noopener"
             ></a>
             <a
               href="https://soundcloud.com/user-293752257/episode-one-return-of-the-chinese-quantum-superfriends"
               title="Episode One - Return of the Chinese quantum Superfriends"
               target="_blank"
               style={{ color: "#cccccc", textDecoration: "none" }}
+              rel="noopener"
             ></a>
           </div>
         </div>
