@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://test.site.net",
+    siteUrl: "https://doubleornothing.show",
     author: "richard germaine",
     publisher: "self",
     title: "Double or Nothing",

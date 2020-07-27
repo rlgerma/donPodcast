@@ -45,7 +45,7 @@ const Header = () => {
               about
             </Link>
             <a
-              href={`https://www.instagram.com/${data.siteMetadata.siteMetadata.social.instagram}`}
+              href={`${data.siteMetadata.siteMetadata.social.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
               className="ml3 ml4-l"
